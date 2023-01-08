@@ -2,7 +2,7 @@ version: '3.7'
 
 services:
   db:
-    container_name: "test_db"
+    container_name: "message_db"
     platform: linux/x86_64
     build:
       context: .
@@ -16,7 +16,7 @@ services:
     # setting some env vars to create the DB
     environment:
       MYSQL_RANDOM_ROOT_PASSWORD: "secret"
-      MYSQL_DATABASE: "test"
+      MYSQL_DATABASE: "message"
       MYSQL_USER: "tester"
       MYSQL_PASSWORD: "secret"
       # OR if you want to use "root" as the user, just these two lines
@@ -28,7 +28,7 @@ services:
       - mysql_data:/var/lib/mysql
     command: --default-authentication-plugin=mysql_native_password
   api:
-    container_name:  "test_api"
+    container_name:  "message_api"
     # we want to use the image which is build from our Dockerfile
     build:
       context: .

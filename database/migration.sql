@@ -1,10 +1,10 @@
-CREATE TABLE `users`
+CREATE TABLE `message`
 (
-    id   bigint auto_increment,
-    name varchar(255) NOT NULL,
-    PRIMARY KEY (`id`)
+    messageID   bigint auto_increment,
+    content varchar(255) NOT NULL,
+    PRIMARY KEY (`messageID`)
 );
 
-INSERT INTO `users` (`name`)
-VALUES ('Solomon'),
-       ('Menelik');
+INSERT INTO `message` (`content`)
+VALUES ('I will be absent tomorrow'),
+       ('I will handout the assignment in upcoming days');
